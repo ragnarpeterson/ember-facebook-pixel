@@ -1,6 +1,6 @@
 {
   "name": "ember-facebook-pixel",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A simple addon to include facebook pixel in your Ember app",
   "directories": {
     "doc": "doc",
