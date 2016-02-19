@@ -35,16 +35,14 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
     "ember-disable-prototype-extensions": "^1.0.0",
-    "ember-try": "0.0.6"
+    "ember-try": "0.0.6",
+    "ember-cli-babel": "^5.1.3"
   },
   "keywords": [
     "ember-addon",
     "facebook",
     "pixel"
   ],
-  "dependencies": {
-    "ember-cli-babel": "^5.1.3"
-  },
   "ember-addon": {
     "configPath": "tests/dummy/config"
   }

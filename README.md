@@ -4,22 +4,20 @@ This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+````
+ember install ember-facebook-pixel
+````
 
-## Running
+## Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Set the Pixel's ID config/environment.js:
 
-## Running Tests
+```js
+if (environment === "production") {
+  ENV["ember-facebook-pixel"] = {
+    id: 'id-of-your-pixel'
+  };
+}
+```
 
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+You can either set the Pixel only in one environment like in the above example, or globally. The Pixel will only be initiated if there is an ID found in your app's config.

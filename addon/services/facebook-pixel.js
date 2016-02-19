@@ -5,11 +5,17 @@ const INIT = 'init'
 export default Ember.Service.extend({
   id: null,
 
+  isEnabled: Ember.computed.notEmpty('id'),
+
   setup: Ember.on('init', function() {
-    fbq(INIT, this.id);
+    if (this.get('isEnabled')) {
+      fbq(INIT, this.id);
+    }
   }),
 
   track(event, params) {
-    fbq('track', event, params);
+    if (this.get('isEnabled')) {
+      fbq('track', event, params);
+    }
   }
 });
