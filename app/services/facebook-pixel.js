@@ -2,5 +2,5 @@ import FacebookPixel from 'ember-facebook-pixel/services/facebook-pixel';
 import config from '../config/environment';
 
 export default FacebookPixel.extend({
-  id: config['ember-facebook-pixel'].id
+  id: config['ember-facebook-pixel'] ? config['ember-facebook-pixel'].id : null
 });
