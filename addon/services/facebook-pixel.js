@@ -1,21 +1,29 @@
 import Ember from 'ember';
+/* global fbq */
 
-const INIT = 'init'
+const INIT = 'init';
 
 export default Ember.Service.extend({
   id: null,
 
   isEnabled: Ember.computed.notEmpty('id'),
 
-  setup: Ember.on('init', function() {
+  fbq(...args) {
+    if (typeof fbq === 'undefined') {
+      return null;
+    }
+    return fbq(args);
+  },
+
+  setup: Ember.on('init', function setup() {
     if (this.get('isEnabled')) {
-      fbq(INIT, this.id);
+      this.fbq(INIT, this.id);
     }
   }),
 
   track(event, params) {
     if (this.get('isEnabled')) {
-      fbq('track', event, params);
+      this.fbq('track', event, params);
     }
-  }
+  },
 });
